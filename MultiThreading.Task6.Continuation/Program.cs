@@ -47,6 +47,7 @@ namespace MultiThreading.Task6.Continuation
 
             taskB.ContinueWith((t) =>
             {
+                Console.WriteLine("Task B Running on Thread ID " + Thread.CurrentThread.ManagedThreadId);
                 Console.WriteLine("Continuation Task B executed on Faulted:  (OnFaulted) - Exception: " + t.Exception?.InnerException?.Message);
             }, TaskContinuationOptions.OnlyOnFaulted);
 
